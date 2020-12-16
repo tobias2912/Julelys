@@ -18,6 +18,7 @@ LED_DMA = 10          # DMA channel to use for generating signal (try 10)
 LED_BRIGHTNESS = 100  # Set to 0 for darkest and 255 for brightest
 LED_INVERT = False    # True to invert the signal (when using NPN transistor level shift)
 LED_CHANNEL = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
+TOTAL_TTL = 5         # time to live julelys
 
 
 # Define functions which animate LEDs in various ways.
@@ -82,8 +83,9 @@ def theaterChaseRainbow(strip, wait_ms=10):
             time.sleep(wait_ms / 1000.0)
             for i in range(0, strip.numPixels(), 3):
                 strip.setPixelColor(i + q, 0)
+
 def get_brightness(ttl):
-    color = 250-ttl*10
+    color = 250-ttl*(250/TOTAL_TTL)
     if ttl == 0:
         color = 0
     return Color(color, color, color)
@@ -98,7 +100,7 @@ def julelys(strip, lightvalues):
     light_freq = 100
     for i in range(random.randint(0,light_freq),strip.numPixels(), light_freq+random.randint(2,6)):
     #    strip.setPixelColor(i, Color(255,255,255))
-        lightvalues[i] = 5
+        lightvalues[i] = TOTAL_TTL
     #display current values and lower timetolive
     for i in range(strip.numPixels()):
         strip.setPixelColor(i, get_brightness(lightvalues[i]))
