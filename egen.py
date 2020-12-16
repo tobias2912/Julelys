@@ -95,7 +95,8 @@ def julelys(strip, lightvalues):
     # strip.show()
 
     #randomly add some new lights
-    for i in range(random.randint(0,40),strip.numPixels(), 40):
+    light_freq = 100
+    for i in range(random.randint(0,light_freq),strip.numPixels(), light_freq+random.randint(2,6)):
     #    strip.setPixelColor(i, Color(255,255,255))
         lightvalues[i] = 5
     #display current values and lower timetolive
@@ -103,7 +104,7 @@ def julelys(strip, lightvalues):
         strip.setPixelColor(i, get_brightness(lightvalues[i]))
         lightvalues[i] = max(lightvalues[i]-1, 0)
     strip.show()
-    time.sleep(3)
+    time.sleep(1)
     
     
 
