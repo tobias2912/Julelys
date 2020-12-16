@@ -85,7 +85,7 @@ def theaterChaseRainbow(strip, wait_ms=10):
                 strip.setPixelColor(i + q, 0)
 
 def get_brightness(ttl):
-    color = 250-ttl*(250/TOTAL_TTL)
+    color = 250-int(ttl*(250/TOTAL_TTL))
     assert color >=0
     if ttl == 0:
         color = 0
