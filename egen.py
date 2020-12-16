@@ -86,13 +86,18 @@ def theaterChaseRainbow(strip, wait_ms=10):
 
 def get_brightness(ttl):
     color = 250-int(ttl*(250/TOTAL_TTL))
-    assert color >=0
     if ttl == 0:
         color = 0
-    else:
+    if ttl == 1:
         color = 3
-    if color != 0:
-        print(color)
+    if ttl == 2:
+        color = 10
+    if ttl == 3:
+        color = 100
+    if ttl == 4:
+        color = 250
+    if ttl == 5:
+        color = 255
     return Color(color, color, color, color)
 
 def julelys(strip, lightvalues):
