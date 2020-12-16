@@ -84,8 +84,8 @@ def theaterChaseRainbow(strip, wait_ms=10):
                 strip.setPixelColor(i + q, 0)
 
 def julelys(strip):
-    for i in range(0,strip.numPixels(), 20):
-        strip.setPixelColor(i, Color(10,0,0))
+    for i in range(0,strip.numPixels()):
+        strip.setPixelColor(i, Color(0,0,0))
         strip.show()
     for i in range(0,strip.numPixels(), 20+random.randint(0,10)):
         strip.setPixelColor(i, Color(255,255,255))
