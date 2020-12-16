@@ -85,6 +85,7 @@ def theaterChaseRainbow(strip, wait_ms=10):
                 strip.setPixelColor(i + q, 0)
 
 def get_brightness(ttl):
+    yellow_val = 3
     color = 250-int(ttl*(250/TOTAL_TTL))
     if ttl == 0:
         color = 0
@@ -98,7 +99,7 @@ def get_brightness(ttl):
         color = 250
     if ttl == 5:
         color = 10
-    return Color(max(color-10, 0), max(color, 0), max(color-10, 0), color)
+    return Color(max(int(color/yellow_val), 0), max(color, 0), max(int(color/yellow_val), 0), color)
 
 def julelys(strip, lightvalues):
     #remove all previous
