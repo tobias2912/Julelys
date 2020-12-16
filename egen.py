@@ -90,7 +90,7 @@ def get_brightness(ttl):
     if ttl == 0:
         color = 0
     else:
-        color = 3  
+        color = 2
     if color != 0:
         print(color)
     return Color(color, color, color, color)
