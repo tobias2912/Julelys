@@ -89,8 +89,7 @@ def get_brightness(ttl):
     assert color >=0
     if ttl == 0:
         color = 0
-    if color == 50:
-        color = 2
+    color = 2
     if color != 0:
         print(color)
     return Color(color, color, color, color)
