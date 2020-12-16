@@ -118,7 +118,7 @@ def julelys(strip, lightvalues):
     #stjerne
     strip.setPixelColor(strip.numPixels()-1, Color(255,255,255))
     strip.show()
-    time.sleep(1)
+    time.sleep(0.1)
     
     
 
