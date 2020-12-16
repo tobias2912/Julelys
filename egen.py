@@ -10,7 +10,7 @@ from rpi_ws281x import PixelStrip, Color
 import argparse
 
 # LED strip configuration:
-LED_COUNT = 298         # Number of LED pixels.
+LED_COUNT = 298       # Number of LED pixels.
 LED_PIN = 18          # GPIO pin connected to the pixels (18 uses PWM!).
 # LED_PIN = 10        # GPIO pin connected to the pixels (10 uses SPI /dev/spidev0.0).
 LED_FREQ_HZ = 800000  # LED signal frequency in hertz (usually 800khz)
@@ -106,6 +106,8 @@ def julelys(strip, lightvalues):
     for i in range(strip.numPixels()):
         strip.setPixelColor(i, get_brightness(lightvalues[i]))
         lightvalues[i] = max(lightvalues[i]-1, 0)
+    #stjerne
+    strip.setPixelColor(strip.numPixels()-1, Color(255,255,255))
     strip.show()
     time.sleep(1)
     
