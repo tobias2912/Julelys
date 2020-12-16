@@ -132,7 +132,7 @@ if __name__ == '__main__':
             rainbowCycle(strip)
             theaterChaseRainbow(strip)
             '''
-            rainbow(strip)
+            #rainbow(strip)
             julelys(strip)
 
 
