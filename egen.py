@@ -86,6 +86,7 @@ def theaterChaseRainbow(strip, wait_ms=10):
 
 def get_brightness(ttl):
     color = 250-ttl*(250/TOTAL_TTL)
+    assert color >=0
     if ttl == 0:
         color = 0
     return Color(color, color, color)
