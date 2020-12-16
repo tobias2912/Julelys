@@ -82,25 +82,26 @@ def theaterChaseRainbow(strip, wait_ms=10):
             time.sleep(wait_ms / 1000.0)
             for i in range(0, strip.numPixels(), 3):
                 strip.setPixelColor(i + q, 0)
+def get_brightness(ttl):
+    color = 250-ttl*10
+    return Color(color, color, color)
 
-def julelys(strip):
-    for i in range(0,strip.numPixels()):
-        strip.setPixelColor(i, Color(0,0,10))
+def julelys(strip, lightvalues):
+    #remove all previous
+    # for i in range(0,strip.numPixels()):
+    #     strip.setPixelColor(i, Color(0,0,0))
+    # strip.show()
+
+    #randomly add some new lights
+    for i in range(random.randint(0,40),strip.numPixels(), 40)):
+    #    strip.setPixelColor(i, Color(255,255,255))
+        lightvalues[i] = 5
+    #display current values and lower timetolive
+    for i in range(strip.numPixels()):
+        strip.setPixelColor(i, get_brightness(lightvalues[i]))
+        lightvalues[i] = max(lightvalues[i]-1, 0)
     strip.show()
-    for i in range(0,strip.numPixels(), 20+random.randint(0,10)):
-        strip.setPixelColor(i, Color(255,255,255))
-        strip.show()
-    time.sleep(2)
-
-def julelys2(strip):
-    for i in range(strip.numPixels(), 20):
-        strip.setPixelColor(i, Color(10,0,0))
-        strip.show()
-    for i in range(strip.numPixels(), 20+random.randint(0,10)):
-        strip.setPixelColor(i, Color(255,255,255))
-        strip.show()
-    time.sleep(2)
-
+    time.sleep(3)
     
     
 
@@ -115,6 +116,9 @@ if __name__ == '__main__':
     strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
     # Intialize the library (must be called once before other functions).
     strip.begin()
+    #julelys setup, (secondsToLive)
+    lightvalues = [(0)]*strip.numPixels()
+
 
     print('Press Ctrl-C to quit.')
     if not args.clear:
@@ -142,7 +146,7 @@ if __name__ == '__main__':
             theaterChaseRainbow(strip)
             '''
             #rainbow(strip)
-            julelys(strip)
+            julelys(strip, lightvalues)
 
 
 
