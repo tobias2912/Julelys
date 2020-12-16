@@ -18,7 +18,7 @@ LED_DMA = 10          # DMA channel to use for generating signal (try 10)
 LED_BRIGHTNESS = 100  # Set to 0 for darkest and 255 for brightest
 LED_INVERT = False    # True to invert the signal (when using NPN transistor level shift)
 LED_CHANNEL = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
-TOTAL_TTL = 100       # time to live julelys
+TOTAL_TTL = 50       # time to live julelys
 
 
 # Define functions which animate LEDs in various ways.
@@ -110,7 +110,7 @@ def julelys(strip, lightvalues):
     #stjerne
     strip.setPixelColor(strip.numPixels()-1, Color(255,255,255))
     strip.show()
-    time.sleep(0.1)
+    time.sleep(0.05)
     
     
 
