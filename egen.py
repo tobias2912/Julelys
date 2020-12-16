@@ -90,7 +90,7 @@ def get_brightness(ttl):
     if ttl == 0:
         color = 0
     
-    return Color(max(color, 0), max(color, 0), max(int(color/yellow_val), 0), color)
+    return Color(max(color, 0), max(color, 0), min(int(color/yellow_val), 0), color)
 
 def julelys(strip, lightvalues):
     #remove all previous
