@@ -111,6 +111,11 @@ def julelys(strip, lightvalues):
     strip.setPixelColor(strip.numPixels()-1, Color(255,255,255))
     strip.show()
     time.sleep(0.05)
+
+def setcolor(strip, color):
+    for i in range(strip.numPixels()):
+        strip.setPixelColor(i, color)
+    strip.show
     
     
 
@@ -136,7 +141,7 @@ if __name__ == '__main__':
     try:
 
         while True:
-            
+            '''
             colorWipe(strip, Color(255, 0, 0))  # Red wipe
             colorWipe(strip, Color(0, 255, 0))  # Blue wipe
             colorWipe(strip, Color(0, 0, 255))  # Green wipe
@@ -156,6 +161,9 @@ if __name__ == '__main__':
             
             #rainbow(strip)
             julelys(strip, lightvalues)
+            '''
+            setcolor(strip, Color(255, 0, 0))
+
 
 
 
