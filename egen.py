@@ -136,7 +136,7 @@ if __name__ == '__main__':
     try:
 
         while True:
-            '''
+            
             colorWipe(strip, Color(255, 0, 0))  # Red wipe
             colorWipe(strip, Color(0, 255, 0))  # Blue wipe
             colorWipe(strip, Color(0, 0, 255))  # Green wipe
@@ -153,7 +153,7 @@ if __name__ == '__main__':
             # Rainbow animations.
             rainbowCycle(strip)
             theaterChaseRainbow(strip)
-            '''
+            
             #rainbow(strip)
             julelys(strip, lightvalues)
 
