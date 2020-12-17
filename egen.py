@@ -115,7 +115,7 @@ def julelys(strip, lightvalues):
 def setcolor(strip, color):
     for i in range(strip.numPixels()):
         strip.setPixelColor(i, color)
-    strip.show
+        strip.show()
     
     
 
