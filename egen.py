@@ -158,11 +158,11 @@ if __name__ == '__main__':
             theaterChase(strip, Color(127, 127, 127, 0))  # Composite White theater chase
             theaterChase(strip, Color(127, 127, 127, 127))  # Composite White + White theater chase
             # Rainbow animations.
-            rainbowCycle(strip)            
+            '''
+            rainbowCycle(strip)     
+            '''       
             #rainbow(strip)
-            '''
             julelys(strip, lightvalues)
-            '''
             setcolor(strip, Color(255, 0, 0))
             theaterChaseRainbow(strip)
             '''
